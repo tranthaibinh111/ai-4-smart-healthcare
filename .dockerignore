@@ -1,0 +1,27 @@
+# VS code
+.vscode/
+
+# Pycharm
+,idea/
+
+# Git
+.git
+.gitignore
+LICENSE
+README.md
+
+# Editor
+.editorconfig
+
+# NodeJS
+node_modules/
+package-lock.json
+build/
+
+# Yarn
+yarn.lock
+
+# ANN Shop
+compose/reactjs/Dockerfile
+compose/django/Dockerfile
+docker-compose.yml
