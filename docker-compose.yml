@@ -9,18 +9,18 @@ volumes:
 
 services:
   reactjs:
-      container_name: 'ai-4-smart-healthcare_reactjs'
-      build:
-        context: .
-        dockerfile: ./compose/reactjs/Dockerfile
-        args:
-          - NODE_ENV=production
-      command: /start.sh
-      volumes:
-        - ./front-end:/app
-        - node_modules:/app/node_modules
-      expose:
-        - 4000
+    container_name: 'ai-4-smart-healthcare_reactjs'
+    build:
+      context: .
+      dockerfile: ./compose/reactjs/Dockerfile
+      args:
+        - DEBUG=false
+    command: /start.sh
+    volumes:
+      - ./front-end:/app
+      - node_modules:/app/node_modules
+    expose:
+      - 4000
 
   postgres:
     env_file: ./back-end/config/.env

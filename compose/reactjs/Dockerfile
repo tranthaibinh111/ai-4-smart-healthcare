@@ -1,7 +1,7 @@
 FROM node:14.18.1
 
-ARG NODE_ENV
-ENV NODE_ENV $NODE_ENV
+ARG DEBUG
+ENV DEBUG $DEBUG
 
 ADD ./compose/reactjs/start.sh /
 RUN sed -i 's/\r//' start.sh
@@ -11,6 +11,9 @@ ADD ./front-end /app
 WORKDIR /app
 
 RUN yarn install
+RUN if [ "$DEBUG" = "false" ]; \
+then \
+    yarn build && \
+    npm install -g serve; \
+fi
 ENV PATH /app/node_modules/.bin:$PATH
-
-RUN if [ "$NODE_ENV" = "production" ]; then yarn build && yarn global add serve; fi

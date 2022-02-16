@@ -8,11 +8,11 @@ function start_production() {
   serve -s build -l 4000
 }
 
-if [ "$NODE_ENV" = "production" ]
+if [ "$DEBUG" = "true" ]
 then
-  echo "use production server"
-  start_production
-else
   echo "use development server"
   start_development
+else
+  echo "use production server"
+  start_production
 fi
