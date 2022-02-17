@@ -52,7 +52,7 @@ services:
     image: nginx:latest
     depends_on:
       - reactjs
-      # - django
+      - django
     volumes:
       - ./compose/nginx:/etc/nginx/conf.d
       - ./nginxlogs:/var/log/nginx
