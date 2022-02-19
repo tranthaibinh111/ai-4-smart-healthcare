@@ -6,6 +6,7 @@ volumes:
   postgres_data: {}
   postgres_backups: {}
   django_ipython_data: {}
+  static_volume: {}
 
 services:
   reactjs:
@@ -42,6 +43,7 @@ services:
     volumes:
       - ./back-end:/app
       - django_ipython_data:/root/.ipython
+      - static_volume:/app/static
     links:
       - postgres
     expose:
@@ -56,5 +58,6 @@ services:
     volumes:
       - ./compose/nginx:/etc/nginx/conf.d
       - ./nginxlogs:/var/log/nginx
+      - static_volume:/app/staticfiles
     ports:
       - 80:80
