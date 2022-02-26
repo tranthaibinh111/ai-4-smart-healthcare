@@ -21,7 +21,7 @@ build/
 # Yarn
 yarn.lock
 
-# ANN Shop
+# AI 4 Smart Healthcare
 compose/reactjs/Dockerfile
 compose/django/Dockerfile
 docker-compose.yml
