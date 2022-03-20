@@ -10,9 +10,9 @@ function start_production() {
 
 if [ "$DEBUG" = "true" ]
 then
-  echo "use development server"
+  echo "use development"
   start_development
 else
-  echo "use production server"
+  echo "use production"
   start_production
 fi
