@@ -63,4 +63,4 @@ services:
       - ./nginxlogs:/var/log/nginx
       - static_volume:/app/staticfiles
     ports:
-      - 80:80
+      - 8080:80
