@@ -4,7 +4,7 @@ ARG DEBUG
 ENV DEBUG $DEBUG
 
 RUN apt-get update
-RUN apt install xsel
+RUN apt-get install xsel
 
 ADD ./compose/reactjs/start.sh /
 RUN sed -i 's/\r//' start.sh
