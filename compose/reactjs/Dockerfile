@@ -3,6 +3,9 @@ FROM node:14.18.1
 ARG DEBUG
 ENV DEBUG $DEBUG
 
+RUN apt-get update
+RUN apt install xsel
+
 ADD ./compose/reactjs/start.sh /
 RUN sed -i 's/\r//' start.sh
 RUN chmod +x start.sh
@@ -13,8 +16,7 @@ WORKDIR /app
 RUN yarn install
 RUN if [ "$DEBUG" = "false" ]; \
 then \
-    rm -r -f build && \
-    yarn build && \
+    yarn run build && \
     yarn global add serve; \
 fi
 ENV PATH /app/node_modules/.bin:$PATH
