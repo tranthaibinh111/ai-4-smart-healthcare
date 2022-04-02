@@ -16,6 +16,7 @@ WORKDIR /app
 RUN yarn install
 RUN if [ "$DEBUG" = "false" ]; \
 then \
+    rm -r -f build; \
     yarn run build && \
     yarn global add serve; \
 fi
