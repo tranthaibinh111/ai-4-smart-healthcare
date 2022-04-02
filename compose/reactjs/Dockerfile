@@ -13,10 +13,10 @@ RUN chmod +x start.sh
 ADD ./front-end /app
 WORKDIR /app
 
+RUN rm -r -f build
 RUN yarn install
 RUN if [ "$DEBUG" = "false" ]; \
 then \
-    rm -r -f build; \
     yarn run build && \
     yarn global add serve; \
 fi
