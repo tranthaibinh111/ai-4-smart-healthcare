@@ -17,7 +17,6 @@ RUN rm -r -f build
 RUN yarn install
 RUN if [ "$DEBUG" = "false" ]; \
 then \
-    yarn run build && \
     yarn global add serve; \
 fi
 ENV PATH /app/node_modules/.bin:$PATH

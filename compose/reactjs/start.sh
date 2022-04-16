@@ -5,6 +5,7 @@ function start_development() {
 }
 
 function start_production() {
+  yarn run build
   serve -s build -l 4000
 }
 
