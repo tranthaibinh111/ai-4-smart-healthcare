@@ -17,6 +17,8 @@ services:
       args:
         - DEBUG=false
     command: /start.sh
+    environment:
+      - NODE_ENV=production
     volumes:
       - ./front-end:/app
       - node_modules:/app/node_modules
